@@ -32,7 +32,7 @@
 
 ## 安装说明
 
-1. 下载 `ListTools-1.0-SNAPSHOT.jar` 文件
+1. 下载 `ListTools-1.1-SNAPSHOT.jar` 文件
 2. 将文件放入 Velocity 服务器的 `plugins` 目录
 3. 重启 Velocity 服务器
 4. 插件将自动生成配置文件 `plugins/listtools/config.yml`
@@ -149,7 +149,14 @@ src/main/java/org/plugin/listtools/
 
 ## 更新日志
 
-### v1.0-SNAPSHOT
+### v1.1 (2025-10-07)
+- 🐛 **修复插件加载错误**: 解决了 "plugin is not registered" 错误
+- 🔧 **调度器优化**: 修复了自动检查任务的调度器注册问题
+- 📄 **许可证添加**: 添加了完整的 MIT 开源许可证
+- 📚 **文档完善**: 新增权限配置和使用示例文档
+- ✨ **Tab补全增强**: 优化了命令补全的权限过滤和智能匹配
+
+### v1.0-SNAPSHOT (2025-10-06)
 - ✅ 基础白名单系统
 - ✅ 完整命令系统
 - ✅ 自动检查功能
@@ -196,5 +203,5 @@ SOFTWARE.
 ---
 
 **作者**: NSrank, Augment  
-**版本**: 1.0-SNAPSHOT  
+**版本**: 1.1-SNAPSHOT  
 **兼容性**: Velocity 3.3.0+, Java 17+

@@ -18,14 +18,16 @@ public class AutoCheckTask {
     private final WhitelistManager whitelistManager;
     private final ProxyServer proxyServer;
     private final Logger logger;
+    private final Object plugin;
     private ScheduledTask currentTask;
 
-    public AutoCheckTask(ConfigManager configManager, WhitelistManager whitelistManager, 
-                        ProxyServer proxyServer, Logger logger) {
+    public AutoCheckTask(ConfigManager configManager, WhitelistManager whitelistManager,
+                        ProxyServer proxyServer, Logger logger, Object plugin) {
         this.configManager = configManager;
         this.whitelistManager = whitelistManager;
         this.proxyServer = proxyServer;
         this.logger = logger;
+        this.plugin = plugin;
     }
 
     /**
@@ -38,7 +40,7 @@ public class AutoCheckTask {
         long interval = configManager.getAutoCheckInterval();
         
         currentTask = proxyServer.getScheduler()
-            .buildTask(this, this::performCheck)
+            .buildTask(plugin, this::performCheck)
             .repeat(interval, TimeUnit.MILLISECONDS)
             .schedule();
         

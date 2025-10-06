@@ -51,7 +51,7 @@ import java.nio.file.Path;
 @Plugin(
         id = "listtools",
         name = "ListTools",
-        version = "1.0-SNAPSHOT",
+        version = "1.1",
         authors = {"NSrank", "Augment"},
         description = "A comprehensive whitelist system for Velocity proxy"
 )
@@ -97,7 +97,7 @@ public class ListTools {
             logger.info("玩家连接监听器注册完成");
 
             // 初始化自动检查任务
-            autoCheckTask = new AutoCheckTask(configManager, whitelistManager, proxyServer, logger);
+            autoCheckTask = new AutoCheckTask(configManager, whitelistManager, proxyServer, logger, this);
             if (configManager.isEnabled()) {
                 autoCheckTask.start();
                 logger.info("自动检查任务启动完成");
@@ -114,7 +114,7 @@ public class ListTools {
             logger.info("命令注册完成: /listtools, /lt, /whitelist");
 
             logger.info("===================================");
-            logger.info("ListTools v1.0 已加载");
+            logger.info("ListTools v1.1 已加载");
             logger.info("白名单系统启动完成！");
             logger.info("当前状态: 白名单{}, 玩家数量: {}",
                        configManager.isEnabled() ? "启用" : "禁用",
