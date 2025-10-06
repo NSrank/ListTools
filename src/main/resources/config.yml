@@ -1,0 +1,23 @@
+# ListTools 白名单系统配置文件
+# ListTools Whitelist System Configuration File
+
+# 是否启用白名单系统
+# Whether to enable the whitelist system
+enabled: true
+
+# 玩家没有白名单时的踢出消息
+# Kick message when player is not whitelisted
+kick_message: "你还没有白名单！快去服务器群里申请吧！(｀・ω・´)"
+
+# 自动检查在线玩家白名单状态的间隔时间
+# Auto check interval for online players' whitelist status
+# 支持格式 / Supported formats: 30s (秒/seconds), 5m (分钟/minutes), 1h (小时/hours)
+auto_check: "1h"
+
+# 白名单玩家列表
+# Whitelist player list
+whitelist:
+  # 示例玩家名 / Example player names:
+  # - "Player1"
+  # - "Player2"
+  # - "Player3"
